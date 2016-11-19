@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/reg', function(req, res, next) {
     // 访问主页时，调用ejs模板引擎，渲染index.ejs模板文件
-    res.render('index', {
+    res.render('reg', {
         title: '注册'
     });
 });

@@ -3,13 +3,19 @@
  * 和user.js
 **/
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
+var MongoStore = require('connect-mongo')(session);
+var settings = require('./settings');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 var routes = require('./routes/index');
+
+
+
 // var users = require('./routes/users');
 
 var app = express();
@@ -32,6 +38,17 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// app.use(session({
+//     secret: settings.cookieSecret,
+//     key: settings.db,
+//     cookie: {maxAge: 1000*60*60*24*30}, //30days
+//     store: new MongoStore({
+//         // db:settings.db
+//         url:'mongodb://localhost/'+settings.db
+//     })
+// }));
+
 // connect内建的中间件，设置根目录下public文件夹为存放img, css, js等静态文件的目录
 app.use(express.static(path.join(__dirname, 'public')));
 

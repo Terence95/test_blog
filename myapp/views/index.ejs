@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
     <!-- 之前设置了静态文件目录为public -->
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <%- include b %>
-    <p>Welcome to <%= title %></p>
-    <%- include c %>
-  </body>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+</head>
+
+<body>
+    <!-- <h1><%= title %></h1>
+    <p>Welcome to
+        <%= title %>
+    </p> -->
+    <%- include header %>
+    这是主页
+    <%- include footer %>
+</body>
+
 </html>
