@@ -25,7 +25,10 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+// 提示在哪个端口监听它
+server.listen(port, function () {
+    console.log('Express server listining on port ' + app.get('port'));
+});
 server.on('error', onError);
 server.on('listening', onListening);
 
